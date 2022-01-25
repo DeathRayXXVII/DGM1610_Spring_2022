@@ -6,10 +6,10 @@ public class Veriables : MonoBehaviour
 {
 
     public int money; // int is a whole number
-    public float deductingMoney = 0.5f; // floating point number or decimal
+    public float changed = 0.5f; // floating point number or decimal
     public bool isDay; //booleans are true or false
-    public bool purches;
-    public string name; // stirng is a text in quotation marks
+    public bool starving;
+    public string Password; // stirng is a text in quotation marks
     //const ID = 345; //cant be changed 
 
     // Start is called before the first frame update
@@ -28,6 +28,18 @@ public class Veriables : MonoBehaviour
         }else if (isDay ==  false)
         {
             print ("It is Night");
+        }
+        if (Password == "1234")
+        {
+            print("Your logged in");
+        }else
+        {
+            print("Error Wrong Name");
+        }
+        if (starving == true)
+        {
+            money =0;
+            print ("Your Broke");
         }
     }
 }

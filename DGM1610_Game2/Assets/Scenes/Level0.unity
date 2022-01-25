@@ -311,11 +311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9612b0a3e448143a63bf04d4f38d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  deductingMoney: 0.5
+  money: 8
+  changed: 0.2
   isDay: 0
-  purches: 0
-  name: 
+  starving: 0
+  Password: 1234
 --- !u!4 &1063586066
 Transform:
   m_ObjectHideFlags: 0
