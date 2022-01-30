@@ -5,9 +5,9 @@ using UnityEngine;
 public class If_Statments : MonoBehaviour
 {
 
-    // public string lightColor;
+    public string lightColor;
 
-    // public string weather;
+    public string weather;
 
     public string hairColor;
     public int age;
@@ -21,7 +21,7 @@ public class If_Statments : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if(lightColor == "Red")
+        if(lightColor == "Red")
         {
             Debug.Log("The Light is "+ lightColor +" SOTP!!");
         }
@@ -36,16 +36,16 @@ public class If_Statments : MonoBehaviour
         else
         {
             Debug.Log("There isn't a stop light of the color");
-        }*/
+        }
 
-        /*if(weather == "Rain" || weather == "Snow")
+        if(weather == "Rain" || weather == "Snow")
         {
-            Debug.Log("The Weather is aabad, you shouyld wear a coat!");
+            Debug.Log("The Weathers not good, you might want a coat!");
         }
         else if (weather == "Sunny"|| weather == "Cloudy")
         {
             Debug.Log("You dont need a coat!");
-        }*/
+        }
 
         if (hairColor == "Red" && age == 18)
         {
