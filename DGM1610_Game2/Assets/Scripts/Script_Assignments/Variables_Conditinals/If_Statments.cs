@@ -6,11 +6,10 @@ public class If_Statments : MonoBehaviour
 {
 
     public string lightColor;
-
     public string weather;
-
     public string hairColor;
     public int age;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +53,15 @@ public class If_Statments : MonoBehaviour
         else if (hairColor == "Blonde" && age == 100)
         {
             Debug.Log("You are old enough to ride the unicorn ride");
+        }
+
+        if (age == 16 && speed <= 2)
+        {
+            Debug.Log ("You qualify for the uper devision!");
+        }
+        else if ( age >= 15 && speed >= 1)
+        {
+            Debug.Log ("You are not old enough and need more traning!");
         }
     }
 }
