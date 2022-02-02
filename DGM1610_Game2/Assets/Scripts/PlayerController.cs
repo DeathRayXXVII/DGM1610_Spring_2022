@@ -10,11 +10,12 @@ public class PlayerController : MonoBehaviour
     float hInput;
     float fInput;
     float jInput;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -29,6 +30,5 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector3.left * Time.deltaTime * turnSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * hInput);
         
-       
     }
 }
