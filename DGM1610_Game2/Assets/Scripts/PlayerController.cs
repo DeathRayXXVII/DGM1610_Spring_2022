@@ -10,25 +10,18 @@ public class PlayerController : MonoBehaviour
     float hInput;
     float fInput;
     float jInput;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
         hInput = Input.GetAxis("Horizontal");
         fInput = Input.GetAxis("Vertical");
-       // jInput = Input.GetAxis("Jump");
+        jInput = Input.GetAxis("Jump");
         transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jInput);
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed * fInput);
         //transform.Translate(Vector3.back * Time.deltaTime * moveSpeed);
         //transform.Translate(Vector3.left * Time.deltaTime * turnSpeed);
-        //transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * hInput);
+        transform.Rotate(Vector3.up * Time.deltaTime * moveSpeed * hInput);
         //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * hInput);
         
     }
