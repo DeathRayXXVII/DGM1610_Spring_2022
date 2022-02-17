@@ -7,6 +7,7 @@ public class Balloon : MonoBehaviour
     public int scoreToGive; //Score for poped balloon
     public int clickToPop = 3; //How many clicks to pop balloon
     public float balloonScale; //increass or decreases ballon on click
+    public ScoreManager scoreManager; //A bariable to reference the ScoreManager
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Balloon : MonoBehaviour
 
     if(clickToPop == 0)
     {
+        scoreManager.IncreaseScoreText(scoreToGive);
         Destroy(gameObject);
     }
     }
