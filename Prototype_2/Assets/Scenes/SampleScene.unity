@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &488281237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +192,16 @@ MonoBehaviour:
   - Becky
   - Jana
   numbers: 1800000041000000190000004100000054000000170000004400000066000000
+  food:
+  - Pizza
+  - Chesseburgar
+  - Enchaloda
+  - Chicken Sandwich
+  - French Toast
+  age: 10000000120000000900000019000000
+  drinkFlavors:
+  - Coke
+  - Pepsi
 --- !u!4 &488281238
 Transform:
   m_ObjectHideFlags: 0
