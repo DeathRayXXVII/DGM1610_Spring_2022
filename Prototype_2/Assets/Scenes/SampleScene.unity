@@ -202,6 +202,15 @@ MonoBehaviour:
   drinkFlavors:
   - Coke
   - Pepsi
+  decimals:
+  - 0.1
+  - 0.5
+  - 0.2
+  days: 0f000000120000000500000014000000
+  consoleWars:
+  - Playstation
+  - Xbox
+  - Ninetedo
 --- !u!4 &488281238
 Transform:
   m_ObjectHideFlags: 0
