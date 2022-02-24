@@ -123,40 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &113708063 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3177574795392345989, guid: 935968f064172c54da0f94b1f584b641, type: 3}
-  m_PrefabInstance: {fileID: 1126689362739666815}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &113708064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113708063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f18f9396bd8764f847a196861156ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreToGive: 25
-  clickToPop: 3
-  balloonScale: 0.1
-  scoreManager: {fileID: 2024631362}
---- !u!114 &113708069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113708063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af51f8d5b1d2414a9fcbad3114ec3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
 --- !u!1 &488281236
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &488281237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +177,12 @@ MonoBehaviour:
   - Playstation
   - Xbox
   - Ninetedo
+  calc:
+  - 0.78
+  - 0.96
+  - 0.135
+  - 0.759
+  number2: 46db00007e03000005bc000078e60100
 --- !u!4 &488281238
 Transform:
   m_ObjectHideFlags: 0
@@ -614,7 +586,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -626,7 +598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045917597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.029, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -648,75 +620,8 @@ MonoBehaviour:
   - {fileID: 8431743714270236755, guid: 7b7d17ce1e0a4d04a9e1444aa8853215, type: 3}
   - {fileID: 3177574795392345989, guid: 935968f064172c54da0f94b1f584b641, type: 3}
   - {fileID: 2861138301261061083, guid: 18e9576234563b34db92cf1d5274bd87, type: 3}
-  balloonIndex: 7
---- !u!1 &1171036370 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8431743714270236755, guid: 7b7d17ce1e0a4d04a9e1444aa8853215, type: 3}
-  m_PrefabInstance: {fileID: 3945512488170299932}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1171036371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171036370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f18f9396bd8764f847a196861156ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreToGive: 50
-  clickToPop: 3
-  balloonScale: 0.1
-  scoreManager: {fileID: 2024631362}
---- !u!114 &1171036376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171036370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af51f8d5b1d2414a9fcbad3114ec3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
---- !u!1 &1410233884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2861138301261061083, guid: 18e9576234563b34db92cf1d5274bd87, type: 3}
-  m_PrefabInstance: {fileID: 5944824662184094215}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1410233885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410233884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f18f9396bd8764f847a196861156ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreToGive: 100
-  clickToPop: 3
-  balloonScale: 0.1
-  scoreManager: {fileID: 2024631362}
---- !u!114 &1410233890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410233884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af51f8d5b1d2414a9fcbad3114ec3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
+  startDelay: 0.5
+  spawnInterval: 1.5
 --- !u!1 &1834418816
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +774,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 113708064, guid: 935968f064172c54da0f94b1f584b641, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 2024631362}
     - target: {fileID: 3177574795392345989, guid: 935968f064172c54da0f94b1f584b641, type: 3}
       propertyPath: m_Name
       value: Green_Ballon
@@ -926,6 +835,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1171036371, guid: 7b7d17ce1e0a4d04a9e1444aa8853215, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 2024631362}
     - target: {fileID: 5708836241569765599, guid: 7b7d17ce1e0a4d04a9e1444aa8853215, type: 3}
       propertyPath: m_RootOrder
       value: 4

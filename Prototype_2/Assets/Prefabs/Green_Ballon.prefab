@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 5461476113634229541}
   - component: {fileID: 8792020691952201207}
   - component: {fileID: 3068625801169582410}
+  - component: {fileID: 113708064}
+  - component: {fileID: 113708069}
   m_Layer: 0
   m_Name: Green_Ballon
   m_TagString: Untagged
@@ -192,6 +194,37 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &113708064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177574795392345989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f18f9396bd8764f847a196861156ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToGive: 25
+  clickToPop: 1
+  balloonScale: 0.1
+  scoreManager: {fileID: 0}
+--- !u!114 &113708069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177574795392345989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af51f8d5b1d2414a9fcbad3114ec3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  lowerBound: -5
+  scoreManager: {fileID: 0}
 --- !u!1 &8057459246131827081
 GameObject:
   m_ObjectHideFlags: 0
