@@ -16,11 +16,6 @@ public class Balloon : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnMouseDown() 
     {
     clickToPop -= 1; //Reduce clicks by one

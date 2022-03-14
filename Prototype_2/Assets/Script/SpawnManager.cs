@@ -14,11 +14,6 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomBalloon", startDelay, spawnInterval);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void SpawnRandomBalloon()
     {
         //Get a random position on the x-axis
