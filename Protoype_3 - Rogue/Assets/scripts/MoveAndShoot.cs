@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MoveAndShoot : MonoBehaviour
 {
-    public float speed;
-    public float stopDistance;
-    public float retreatDistance;
-    private Transform target;
+    public float speed; 
+    public float stopDistance;// how far it get to the player
+    public float retreatDistance; //how far it gets from the player
+    private Transform target; //who are is our targt
     private float shotDelay;
     public float startDelay;
-    public GameObject projectile;
+    public GameObject projectile; //projectile to shoot
 
 
     // Start is called before the first frame update
@@ -38,7 +38,8 @@ public class MoveAndShoot : MonoBehaviour
 
         if(shotDelay <= 0)
         {
-        Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile, transform.position, Quaternion.identity); 
+            shotDelay = startDelay;
         }
         else 
         {

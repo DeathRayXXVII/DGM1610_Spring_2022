@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6186240250527782334}
   - component: {fileID: 5760876210297296961}
   - component: {fileID: 1694107081443281217}
+  - component: {fileID: -3947105344748491683}
   m_Layer: 0
   m_Name: Porjectial
   m_TagString: Untagged
@@ -99,3 +100,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-3947105344748491683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343479533104925520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ece90fef3b9a384db19424582e5410c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
