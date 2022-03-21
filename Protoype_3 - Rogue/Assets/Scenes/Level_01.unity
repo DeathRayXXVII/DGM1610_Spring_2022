@@ -361,6 +361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2f98ee72fda6749acca0b673120c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHP: 0
+  maxHp: 0
+  damage: 0
   moveSpeed: 9
 --- !u!212 &527784797
 SpriteRenderer:
@@ -583,7 +586,8 @@ GameObject:
   - component: {fileID: 855056545}
   - component: {fileID: 855056544}
   - component: {fileID: 855056543}
-  m_Layer: 0
+  - component: {fileID: 855056548}
+  m_Layer: 6
   m_Name: Ranged_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,6 +723,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855056548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855056542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f404cae5423dfe41adf02d659c76aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1063680929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5703957381226570468, guid: 5dcfe9d1c88d2b54fb5c86750c2ff1e3, type: 3}
@@ -1165,7 +1181,8 @@ GameObject:
   - component: {fileID: 2018895569}
   - component: {fileID: 2018895568}
   - component: {fileID: 2018895572}
-  m_Layer: 0
+  - component: {fileID: 2018895573}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,6 +1305,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   stopDistance: 1.04
+--- !u!114 &2018895573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018895567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f404cae5423dfe41adf02d659c76aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2104151842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1330,8 @@ GameObject:
   - component: {fileID: 2104151847}
   - component: {fileID: 2104151846}
   - component: {fileID: 2104151843}
-  m_Layer: 0
+  - component: {fileID: 2104151848}
+  m_Layer: 6
   m_Name: Enemy_Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,6 +1469,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2104151848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104151842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f404cae5423dfe41adf02d659c76aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2111491934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5703957381226570468, guid: 5dcfe9d1c88d2b54fb5c86750c2ff1e3, type: 3}
