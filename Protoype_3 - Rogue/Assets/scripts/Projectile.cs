@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public float speed;
     private Transform player;
     private Vector2 target;
+    public int damage;
+    public PlayerControler pD;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,11 @@ public class Projectile : MonoBehaviour
     void onTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
-        DestroyProjectile();
+        {
+            DestroyProjectile();
+            pD.TakeDamge(damage);
+        }
+            
     }
 
     void DestroyProjectile()

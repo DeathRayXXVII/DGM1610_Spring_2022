@@ -15,10 +15,10 @@ public class PlayerControler : MonoBehaviour
     private Vector2 direction; 
 
     [Header ("Player Combat")]
-    public float attackRange; //Range in with the player can attack
+    public int damage; //Damage
+    public float attackRange; //Range in which the player can attack
     public float attackRate; //Rate you can attack
     private float lastAttackTime;
-    public int damage; //Damage
     public LayerMask enemyLayer;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,14 @@ public class PlayerControler : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal"); //Input for left right movement
         movement.y = Input.GetAxis("Vertical"); //Input for updown movment
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(Time.time - lastAttackTime >= attackRate)
+                Attack();
+        }
+            
+        
+
 
     }
     //Set number of calls per frame
@@ -39,6 +47,7 @@ public class PlayerControler : MonoBehaviour
     {
         // Apply physics and move the character
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        updateDirection();
     }
     void updateDirection()
     {
