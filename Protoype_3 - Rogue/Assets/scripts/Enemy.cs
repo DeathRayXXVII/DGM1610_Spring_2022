@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamgae(int damage)
+    public void TakeDamge(int damage)
     {
         curHP -= damage;
 
