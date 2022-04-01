@@ -6,7 +6,9 @@ public class Enums : MonoBehaviour
 {
     enum Color {blue, red, yellow, green, orange, purple};
     enum CarMake {Oldsmobile, Chevrolet, Ford, Mazda, Toyota, Dodge};
-    enum CarModel {Alero, Silverado, Tacoma, f350, Miata, Viper}
+    enum CarModel {Alero, Silverado, Tacoma, f350, Miata, Viper};
+    enum 
+    enum ConsoleWar {Playstaion, Xbox, Nintendo, SteamDeak};
 
     // Start is called before the first frame update
     void Start()
