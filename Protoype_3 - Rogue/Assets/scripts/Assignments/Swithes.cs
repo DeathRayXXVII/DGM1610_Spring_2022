@@ -11,7 +11,7 @@ public class Swithes : MonoBehaviour
     public int socialClass;
     public int speedRate;
     public int yearByDecade;
-    public float;
+    public double citizen;
     public float weaight;
     public bool weather;
     
@@ -166,8 +166,7 @@ public class Swithes : MonoBehaviour
                 print("That was not very populer so reconize");
                 break;
         }
-
-    switch(yourOrder)
+        switch(yearByDecade)
         {
             case 2000:
                 print("I am old!");
@@ -182,10 +181,28 @@ public class Swithes : MonoBehaviour
                 print("Would you even know how to count this way");
                 break;
             case 2020:
-                print("You Wouldn't understand this anyway!")
+                print("You Wouldn't understand this anyway!");
                 break;
             default:
                 print("You are too old for this survey!");
+                break;
+        }
+        switch(citizen)
+        {
+            case 1:
+                print("Spare a coin!");
+                break;
+            case 2:
+                print("Hello mortal!");
+                break;
+            case 3:
+                print("How may I be of assistance!");
+                break;
+            case 4:
+                print("Prase the Gods!");
+                break;
+            default:
+                print("I shall send you to oblivion!!");
                 break;
         }
         
