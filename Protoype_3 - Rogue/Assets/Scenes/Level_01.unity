@@ -680,7 +680,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b829725f4bf813a498d75c56d3c8de86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcConv: 
+  yourOrder: 
   socialClass: 0
+  speedRate: 0
+  weather: 1
 --- !u!4 &1429232157
 Transform:
   m_ObjectHideFlags: 0

@@ -6,9 +6,16 @@ public class Swithes : MonoBehaviour
 {
     public string npcConv;
     public string yourOrder;
+    public string truckMake;
+    public string consoleNames;
     public int socialClass;
     public int speedRate;
+    public int yearByDecade;
+    public float;
+    public float weaight;
     public bool weather;
+    
+    
 
     void Start() 
     {
@@ -24,7 +31,6 @@ public class Swithes : MonoBehaviour
              print ("You run away in shamne, you coward!");
              break;
         }
-        
         switch(socialClass)
         {
             case 5:
@@ -99,6 +105,88 @@ public class Swithes : MonoBehaviour
             default:
              Debug.Log("You were so fast you invented time traval!!");
              break;
+        }
+        switch(weaight)
+        {
+            case 5:
+                print("You need to lose some pounds!");
+                break;
+            case 4:
+                print("still to big!");
+                break;
+            case 3:
+                print("I like the progress!");
+                break;
+            case 2:
+                print("You look great!");
+                break;
+            case 1:
+                print("I did not reconise you! WOW!");
+                break;
+            case 0:
+                print("I think you starved yourself too much!");
+                break;
+            default:
+                print("Your scall is brocken! ERROR!");
+                break;
+        }
+        switch(truckMake)
+        {
+            case "Ford":
+                print("You have chossen wizely!");
+                break;
+            case "Dodge":
+                print("We do not accept trash!");
+                break;
+            case "Chevey":
+                print("You are wellcome to our fold!");
+                break;
+            case "Toyoda":
+                print("The kids table is over there");
+                break;
+            default:
+                print("That is not redneck enough to be reconized");
+                break;
+        }
+        switch(consoleNames)
+        {
+            case "Nintendo":
+                print("Lets a go!");
+                break;
+            case "Playstation":
+                print("You almost achived PC level!");
+                break;
+            case "Xbox":
+                print("Only childeren play xbox");
+                break;
+            case "sega":
+                print("Sonic was the only thing going for you");
+                break;
+            default:
+                print("That was not very populer so reconize");
+                break;
+        }
+
+    switch(yourOrder)
+        {
+            case 2000:
+                print("I am old!");
+                break;
+            case 2005:
+                print("Dose not feel right seeing you all grown up");
+                break;
+            case 2010:
+                print("Your the middle group so see you in 5");
+                break;
+            case 2015:
+                print("Would you even know how to count this way");
+                break;
+            case 2020:
+                print("You Wouldn't understand this anyway!")
+                break;
+            default:
+                print("You are too old for this survey!");
+                break;
         }
         
     }
