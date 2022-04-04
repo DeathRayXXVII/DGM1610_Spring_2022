@@ -31,8 +31,9 @@ public class Projectile : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            DestroyProjectile();
             pD.TakeDamge(damage);
+            DestroyProjectile();
+            
         }
             
     }

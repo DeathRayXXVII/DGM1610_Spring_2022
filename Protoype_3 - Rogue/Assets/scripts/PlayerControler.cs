@@ -25,8 +25,8 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        curHP == maxHp;
-        healthBar.SetHealth(maxHp);
+        curHP = maxHp;
+        healthBar.SetHealth(maxHp); // Updates the health bar 1
     }
 
     // Update is called once per frame
@@ -74,6 +74,7 @@ public class PlayerControler : MonoBehaviour
     public void TakeDamge(int damage)
     {
         curHP -= damage;
+        healthBar.SetHealth(curHP);
 
         if(curHP <= 0)
         {
