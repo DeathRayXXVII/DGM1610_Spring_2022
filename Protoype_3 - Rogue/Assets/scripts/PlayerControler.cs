@@ -7,6 +7,7 @@ public class PlayerControler : MonoBehaviour
     [Header ("Player Health")]
     public int curHP; //Health
     public int maxHp; //Max health
+    public HealthBar healthBar; //visual health
 
     [Header ("Player Movement")]
     public float moveSpeed = 5f; //Speed for the player to move
@@ -24,6 +25,8 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        curHP == maxHp;
+        healthBar.SetHealth(maxHp);
     }
 
     // Update is called once per frame
