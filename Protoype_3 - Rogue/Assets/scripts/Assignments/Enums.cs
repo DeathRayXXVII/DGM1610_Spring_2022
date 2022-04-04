@@ -31,9 +31,13 @@ public class Enums : MonoBehaviour
 
         Recall(CarMake.Oldsmobile, CarModel.Alero);
 
+        Movies movie;
+        movie = (Movies)Random.Range(0,5);
+        print("Do you want to go see a  " + movie + " movie!");
+        
         Snacks snacks;
         snacks = Snacks.Popcorn;
-        print("You spiled your " + snacks + " while seeing an " + Movies.Action + " movie");
+        print("You spiled your " + snacks + " while seeing an " + movie + " movie");
 
         ConsoleWar gaming;
         ConsoleWar gaming2;
@@ -49,14 +53,6 @@ public class Enums : MonoBehaviour
         food = (Food)Random.Range(0,5);
         Meal(food);
 
-        Movies movie;
-        movie = (Movies)Random.Range(0,5);
-        print("Do you want to go see a  " + movie + " movie!");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 
