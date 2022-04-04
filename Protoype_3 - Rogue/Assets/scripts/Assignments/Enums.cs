@@ -7,8 +7,11 @@ public class Enums : MonoBehaviour
     enum Color {blue, red, yellow, green, orange, purple};
     enum CarMake {Oldsmobile, Chevrolet, Ford, Mazda, Toyota, Dodge};
     enum CarModel {Alero, Silverado, Tacoma, f350, Miata, Viper}; 
+    enum CarYear {};
     enum ConsoleWar {Playstaion, Xbox, Nintendo, SteamDeak};
-
+    enum Weather {Raining, Sunny, Cloudy, Stormy};
+    enum Food {};
+    
     // Start is called before the first frame update
     void Start()
     {
