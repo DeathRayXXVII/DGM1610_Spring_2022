@@ -155,3 +155,4 @@ MonoBehaviour:
   attackRange: 2
   attackRate: 1
   player: {fileID: 0}
+  lootDrop: {fileID: 7129051625947131968, guid: 1f763ec64d4fb6c49ba57ff5c3b3de1f, type: 3}

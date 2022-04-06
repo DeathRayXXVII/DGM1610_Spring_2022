@@ -55,7 +55,10 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
     void LootDrop()
-    [
+    {
         Instantiate(lootDrop, transform.position,  Quaternion.identity);
-    ]
+    }
+    
+        
+    
 }
