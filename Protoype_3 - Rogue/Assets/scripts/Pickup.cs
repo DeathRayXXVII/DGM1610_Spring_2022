@@ -7,12 +7,12 @@ public class Pickup : MonoBehaviour
     public enum PickupType {Key, Coin, Gem};
     public PickupType currentPickup;
     public int pickupAmount;
-    private PlayerController playerController;
+    private PlayerControler playerController;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("Player").GetComponet<PlayerController>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerControler>();
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -20,15 +20,18 @@ public class Pickup : MonoBehaviour
         {
             if(currentPickup == PickupType.Key)
             {
-                Debug>Log("you have picked up a golded key!");
+                playerController.key = pickupAmount;
+                Debug.Log("you have picked up a golded key!");
             }
             else if(currentPickup == PickupType.Coin)
             {
-                Debug>Log("you have picked up " + pickupAmount + " Coin's!");
+                playerController.coins += pickupAmount;
+                Debug.Log("you have picked up " + pickupAmount + " Coin's!");
             }
             else if(currentPickup == PickupType.Gem)
             {
-                Debug>Log("you have picked up " + pickupAmount + " Gems!");
+                playerController.gems += pickupAmount;
+                Debug.Log("you have picked up " + pickupAmount + " Gems!");
             }
             Destroy(gameObject);
         }
