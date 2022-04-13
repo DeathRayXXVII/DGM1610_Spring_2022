@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public float moveSpeed;
     
     private Rigidbody rb;
     private Vector3 moveInput;
     private Vector2 mouseInput;
     public float mouseSensitivity = 1.0f;
-    public Camer viewCam;
+    public Camera viewCam;
     
     public GameObject bulletImpact;
     public int currentAmmo;
@@ -39,19 +40,26 @@ public class PlayerController : MonoBehaviour
         mouseInput = new Vector2(-Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y")) * mouseSensitivity; //Inputting the Mouse Sensitivity
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + mouseInput.y, transform.rotation.eulerAngles.y - mouseInput.x, transform.rotation.eulerAngles.z); //Uses the mouse to lock around in a 360 rotation
     
-        if (currentAmmo > 0)
-        {
-            Ray ray = viewCam.ViewportPointToRay(new Vector3(0.5f,0.5f,0f));
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
+       
+       if(Input.GetMouseButtonDown(0))
+       {
+            if (currentAmmo > 0)
             {
-                instantiate(bulletImpact, hit.point, transform.rotation);
-            }
-            else
-            [
-                Debu.Log("RayCast isn't hitting anythingh");
-            ]
+                Ray ray = viewCam.ViewportPointToRay(new Vector3(0.5f,0.5f,0f));
+                RaycastHit hit;
+                if(Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("I'm looking at " + hit.transform.name);
+                    Instantiate(bulletImpact, hit.point, transform.rotation);
+                }
+                else
+                {
+                    Debug.Log("RayCast isn't hitting anythingh");
+                }
 
-        }
+                currentAmmo --;
+             }
+       }
+        
     }
 }
