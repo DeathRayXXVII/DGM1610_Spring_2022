@@ -14,20 +14,20 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>(); //Finding the Rigidbody
+        Cursor.visible = false; //Having the cursor invisibale
+        Cursor.lockState = CursorLockMode.Locked; //locks the cursor
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 moveH = transform.right * moveInput.x;
-        Vector3 moveV = transform.forward * moveInput.z;
-        rb.velocity = (moveH + moveV) * moveSpeed;
+        moveInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //Getting inputs
+        Vector3 moveH = transform.right * moveInput.x; //Used to help blend movement
+        Vector3 moveV = transform.forward * moveInput.z; //Used to help blend movemnt
+        rb.velocity = (moveH + moveV) * moveSpeed; //Adding speed to movement
 
-        mouseInput = new Vector2(-Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y")) * mouseSensitivity;
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + mouseInput.y, transform.rotation.eulerAngles.y - mouseInput.x, transform.rotation.eulerAngles.z);
+        mouseInput = new Vector2(-Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y")) * mouseSensitivity; //Inputting the Mouse Sensitivity
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + mouseInput.y, transform.rotation.eulerAngles.y - mouseInput.x, transform.rotation.eulerAngles.z); //Uses the mouse to lock around in a 360 rotation
     }
 }
