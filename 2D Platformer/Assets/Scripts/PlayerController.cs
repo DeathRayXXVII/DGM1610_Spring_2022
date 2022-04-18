@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [header("Player Stats")]
+    [Header("Player Stats")]
     public float speed;
     public float jumpHeight;
     private Rigidbody2D rb;
 
-    [header("Ground Check")]
+    [Header("Ground Check")]
     private bool isGrounded;//Are we able to jump 
-    public Transfrom groundCheck; //Are we tuching the ground
+    public Transform groundCheck; //Are we tuching the ground
     public float groundCheckRadius; //Making an area to cheak ground
     public LayerMask whatIsGround; //What is the ground
     private float moveVelocity;
@@ -21,12 +21,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isGrounded = true;
-        rb = GetComponet<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void FixedUpdate() 
     {
-        isGrounded = physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround); // Ground check sensor
-
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround); // Ground check sensor
 
         moveVelocity = 0f; // Non-Stick Player
         if(Input.GetKey(KeyCode.D))
@@ -37,15 +36,15 @@ public class PlayerController : MonoBehaviour
         {
             moveVelocity = -speed;
         }
-        rb.velocity = 
+        rb.velocity = new Vector2(moveVelocity, rb.velocity.y); //Helps move the player left/Right
+        
+        if(Input.GetKey(KeyCode.Space) && isGrounded) //Removed GetKeyDown
+                {
+                    Jump();
+                }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            Jump();
-        }
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
 }
