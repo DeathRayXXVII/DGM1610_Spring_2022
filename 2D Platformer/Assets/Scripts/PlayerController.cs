@@ -38,7 +38,11 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(moveVelocity, rb.velocity.y); //Helps move the player left/Right
         
-        if(Input.GetKey(KeyCode.Space) && isGrounded) //Removed GetKeyDown
+        
+    }
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded) //Removed GetKeyDown
                 {
                     Jump();
                 }
