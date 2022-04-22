@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpHeight;
     private Rigidbody2D rb;
+    public int curHP; //Health
+    public int maxHp; //Max health
+    public HealthBar healthBar; //visual health
 
     [Header("Ground Check")]
     private bool isGrounded;//Are we able to jump 
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = true;
         rb = GetComponent<Rigidbody2D>();
+        curHP = maxHp;
+        healthBar.SetHealth(maxHp); //Updates the health bar
     }
     void FixedUpdate() 
     {
@@ -50,5 +55,22 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+    }
+    public void TakeDamage(int Damage)
+    {
+        curHP -= Damage;
+        healthBar.SetHealth(curHP);
+        
+        if(curHP <= 0)
+        {
+            die();
+        }
+    }
+
+    private void die() 
+    {
+        {
+            Debug.Log("!!Player has Died!!");
+        }
     }
 }
