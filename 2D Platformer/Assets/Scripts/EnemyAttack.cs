@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
     {
         /* if(Time.time - lastAttackTime >= attackRate && Vector2.Distance(transform.position, player.transform.position) < attackRange)
         {
-            OnTriggerEnter2D();
+            OnTriggerEnter2D(Coollider2d other);
         }*/
     }
     private void OnTriggerEnter2D (Collider2D other)

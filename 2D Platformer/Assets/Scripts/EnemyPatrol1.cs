@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class EnemyPatrol1 : MonoBehaviour
 {
-    
-    public float speed;
+    [Header ("Enemy Stats")]
+    public int curHP; //Health
+    public int maxHp; //Max health
+    public EnemyHealth healthBar; //visual health
+    public float speed; //Speed
     public float distance;
     private bool moveRight = true;
     public Transform groundDetection;
+    public PlayerController player;
+
+    [Header ("Loot Drop")]
+    public GameObject lootDrop;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        curHP = maxHp;
+        //EnemyHealth.SetHealth(maxHp); //Updates the health bar
     }
 
     // Update is called once per frame
@@ -34,5 +44,24 @@ public class EnemyPatrol1 : MonoBehaviour
                 moveRight = true;
             }
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+        //EnemyHealth.SetHealth(curHP);
+
+        if(curHP<= 0)
+        {
+            die();
+            LootDrop();
+        }
+    }
+    void die()
+    {
+        Destroy(gameObject);
+    }
+    void LootDrop()
+    {
+        Instantiate(lootDrop, transform.position,  Quaternion.identity);
     }
 }

@@ -11,6 +11,19 @@ public class PlayerController : MonoBehaviour
     public int curHP; //Health
     public int maxHp; //Max health
     public HealthBar healthBar; //visual health
+    private Vector2 direction;
+
+    [Header ("Player Combat")]
+    public int damage; //Damage
+    public float attackRange; //Range in which the player can attack
+    public float attackRate; //Rate you can attack
+    private float lastAttackTime;
+    public LayerMask enemyLayer;
+
+    [Header ("Inventory")]
+    public int key;
+    public int coins;
+    public int HealthPotion;
 
     [Header("Ground Check")]
     private bool isGrounded;//Are we able to jump 
@@ -51,10 +64,27 @@ public class PlayerController : MonoBehaviour
                 {
                     Jump();
                 }
+        if(Input.GetMouseButtonDown(0))
+            {
+                if(Time.time - lastAttackTime >= attackRate)
+                Attack(); 
+            }
     }
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+    }
+    
+    void Attack()
+    {
+        lastAttackTime = Time.time;
+        //Raycast using the enemyLayer
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
+        if(hit.collider != null)
+        {
+            hit.collider.GetComponent<EnemyPatrol1>().TakeDamage(damage);
+            Debug.Log("you hit");
+        }
     }
     public void TakeDamage(int Damage)
     {
