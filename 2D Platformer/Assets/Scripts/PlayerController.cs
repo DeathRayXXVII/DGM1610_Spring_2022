@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float attackRate; //Rate you can attack
     private float lastAttackTime;
     public LayerMask enemyLayer;
+    public PlayerAttack playerAttack;
 
     [Header ("Inventory")]
     public int key;
@@ -56,7 +57,6 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(moveVelocity, rb.velocity.y); //Helps move the player left/Right
         
-        
     }
     private void Update() 
     {
@@ -64,12 +64,14 @@ public class PlayerController : MonoBehaviour
                 {
                     Jump();
                 }
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.R))
             {
-                if(Time.time - lastAttackTime >= attackRate)
-                Attack(); 
+                if(Time.time - lastAttackTime >= attackRate);
+                Attack();
+                Debug.Log("ATTACK");
             }
     }
+
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
@@ -82,7 +84,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
         if(hit.collider != null)
         {
-            hit.collider.GetComponent<EnemyPatrol1>().TakeDamage(damage);
+            hit.collider.GetComponent<EnemyPatrol1>()?.TakeDamage(damage);
             Debug.Log("you hit");
         }
     }

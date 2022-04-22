@@ -7,7 +7,9 @@ public class EnemyPatrol1 : MonoBehaviour
     [Header ("Enemy Stats")]
     public int curHP; //Health
     public int maxHp; //Max health
-    public EnemyHealth healthBar; //visual health
+    //public EnemyHealth enemyHealth; //visual health
+
+
     public float speed; //Speed
     public float distance;
     private bool moveRight = true;
@@ -21,8 +23,8 @@ public class EnemyPatrol1 : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        curHP = maxHp;
-        //EnemyHealth.SetHealth(maxHp); //Updates the health bar
+        //curHP = maxHp;
+        //enemyHealth.SetHealth(maxHp); //Updates the health bar
     }
 
     // Update is called once per frame
@@ -48,9 +50,9 @@ public class EnemyPatrol1 : MonoBehaviour
     public void TakeDamage(int damage)
     {
         curHP -= damage;
-        //EnemyHealth.SetHealth(curHP);
-
-        if(curHP<= 0)
+        //enemyHealth.SetHealth(curHP);
+        Debug.Log("I got hit");
+        if(curHP <= 0)
         {
             die();
             LootDrop();
