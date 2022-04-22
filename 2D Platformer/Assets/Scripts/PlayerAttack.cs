@@ -12,21 +12,29 @@ public class PlayerAttack : MonoBehaviour
     public EnemyPatrol1 enemy;
     public LayerMask enemyLayer;
     private Vector2 direction;
+    public GameObject wepon;
 
     // Start is called before the first frame update
     void Start()
     {
         //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyPatrol1>();
-        
+        //wepon = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* if(Time.time - lastAttackTime >= attackRate && Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
-        {
-            OnTriggerEnter2D(Coollider2d other);
-        }*/
+        if(Input.GetKeyDown(KeyCode.R))
+            {
+                if(Time.time - lastAttackTime >= attackRate);
+                //Attack();
+                //wepon = true;
+                Debug.Log("ATTACK");
+            }
+            else
+            {
+                //wepon = false;
+            }
     }
     private void OnTriggerEnter2D (Collider2D other)
     {
