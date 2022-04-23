@@ -24,7 +24,8 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        
+        /*if(Input.GetKeyDown(KeyCode.R))
             {
                 if(Time.time - lastAttackTime >= attackRate);
                 //Attack();
@@ -34,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 //wepon = false;
-            }
+            }*/
     }
     private void OnTriggerEnter2D (Collider2D other)
     {

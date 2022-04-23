@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float lastAttackTime;
     public LayerMask enemyLayer;
     public PlayerAttack playerAttack;
+    public GameObject wepon;// weopn of use
 
     [Header ("Inventory")]
     public int key;
@@ -67,9 +68,21 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
             {
                 if(Time.time - lastAttackTime >= attackRate);
-                Attack();
-                Debug.Log("ATTACK");
+                {
+                    wepon.SetActive(true);
+                    Debug.Log("ATTACK"); 
+                }      
             }
+            else if (Input.GetKeyUp(KeyCode.R))
+            {
+                wepon.SetActive(false);
+            }
+        
+        //Player Flip
+        if (GetComponent<Rigidbody2D>().velocity.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if(GetComponent<Rigidbody2D>().velocity.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     public void Jump()
