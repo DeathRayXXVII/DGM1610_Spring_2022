@@ -19,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyPatrol1>();
         //wepon = false;
+        wepon.SetActive(false);
     }
 
     // Update is called once per frame
