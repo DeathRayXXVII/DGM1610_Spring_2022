@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public PlayerController playerController; //Player
+    public PlayerController player; //Player
     public GameObject currentCheakPoint; //Last cheak point found
     public Rigidbody2D rb; //Players rigidbody
-    public GameObject player; //Player object
+    public GameObject playerOj; //Player object
     public ScoreManager scoreManager;
     public HealthBar healthBar; //visual health
     [Header ("Particals")]
@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
     {
         //Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles
         //Hide the player on death
-        player.SetActive(false); 
+        playerOj.SetActive(false); 
         rb.GetComponent<Renderer>().enabled = false;
         //Gravity Reset
         gravityStore = rb.GetComponent<Rigidbody2D>().gravityScale;
@@ -44,10 +44,10 @@ public class LevelManager : MonoBehaviour
         //Match Player transfom poition with cheak point
         rb.transform.position = currentCheakPoint.transform.position;
         //Show Player
-        player.SetActive(true);
+        playerOj.SetActive(true);
         rb.GetComponent<Renderer>().enabled = true;
-        playerController.curHP = playerController.maxHp;
-        healthBar.SetHealth(playerController.curHP);
+        player.curHP = player.maxHp;
+        healthBar.SetHealth(player.curHP);
         //Show Respawn Particle
         //Instantiate(respawnParticles, currentCheakPoint.transform.position, currentCheakPoint.transform.rotation);
     }
