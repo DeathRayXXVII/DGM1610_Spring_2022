@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPickUp : MonoBehaviour
 {
     public HealthBar healthBar;
-    public PlayerController playerController;
+    public PlayerController player;
     public int healthToGive;
 
     // Start is called before the first frame update
@@ -16,7 +16,8 @@ public class HealthPickUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) 
     {
-        healthBar.SetHealth(healthToGive);
+        player
+        //healthBar.SetHealth(healthToGive);
         Debug.Log("You gained health");
     }
 }

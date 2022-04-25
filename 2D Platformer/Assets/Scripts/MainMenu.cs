@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int SceneToLoad;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int sceneToLoad; //Pick a scene to load
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        SceneManager.LoadScene(sceneToLoad); //scene to start the game
+    }
+    public void QuitGame()
+    {
+        Application.Quit(); //quit the game/application
+        Debug.Log("Game Quit");
     }
 }
