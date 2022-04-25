@@ -10,11 +10,13 @@ public class EnemyAttack : MonoBehaviour
     public float attackRate;
     private float lastAttackTime;
     public PlayerController player;
+    public LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -29,5 +31,9 @@ public class EnemyAttack : MonoBehaviour
     {
         lastAttackTime = Time.time;
         player.TakeDamage(damage);
+        if(player.curHP <= 0)
+        {
+            levelManager.RespawnPlayer();
+        }
     }
 }

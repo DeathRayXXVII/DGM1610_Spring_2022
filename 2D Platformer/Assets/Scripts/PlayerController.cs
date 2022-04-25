@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Inventory")]
     public int key;
-    public int coins;
+    //public int coins;
     public int HealthPotion;
 
     [Header("Ground Check")]
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Jump();
                 }
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetMouseButtonDown(0))
             {
                 if(Time.time - lastAttackTime >= attackRate);
                 {
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("ATTACK"); 
                 }      
             }
-            else if (Input.GetKeyUp(KeyCode.R))
+             if (Input.GetMouseButtonUp(0))
             {
                 wepon.SetActive(false);
             }

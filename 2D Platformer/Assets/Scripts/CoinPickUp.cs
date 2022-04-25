@@ -9,7 +9,7 @@ public class CoinPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
