@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
         playerOj.SetActive(true);
         rb.GetComponent<Renderer>().enabled = true;
         player.curHP = player.maxHp;
-        healthBar.SetHealth(player.curHP);
+        healthBar.SetHealth(player.maxHp);
         //Show Respawn Particle
         //Instantiate(respawnParticles, currentCheakPoint.transform.position, currentCheakPoint.transform.rotation);
     }

@@ -11,13 +11,31 @@ public class HealthPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        healthBar = GameObject.Find("HealthBar_UI").GetComponent<HealthBar>();
     }
 
     void OnTriggerEnter2D(Collider2D other) 
     {
-        player
-        //healthBar.SetHealth(healthToGive);
-        Debug.Log("You gained health");
+        
+        if (player.curHP >= player.maxHp)
+        {
+            //player.curHP = player.maxHp;
+            Destroy(gameObject);
+            Debug.Log("All healed up");
+        }
+        else if (player.curHP <= player.maxHp)
+        {
+            player.curHP += healthToGive;
+            healthBar.SetHealth(player.curHP);
+            if(player.curHP >= player.maxHp)
+            {
+                player.curHP = player.maxHp;
+            }
+            Destroy(gameObject);
+            Debug.Log("You gained health");
+        }
+        
+        
     }
 }
