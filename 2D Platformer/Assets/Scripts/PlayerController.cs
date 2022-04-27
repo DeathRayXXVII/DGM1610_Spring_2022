@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround; //What is the ground
     private float moveVelocity;
 
-    //private AudioSource source;
+    private AudioSource source; //Audio sourece
+    public AudioClip marker; //Audio clip
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         curHP = maxHp;
         healthBar.SetHealth(maxHp); //Updates the health bar
+        source = GetComponent<AudioSource>(); //Getting the audio source
     }
     void FixedUpdate() 
     {
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        source.PlayOneShot(marker,1.0f);//Play the Audio source on jump
     }
     
     void Attack()

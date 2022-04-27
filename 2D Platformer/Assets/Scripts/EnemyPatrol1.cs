@@ -9,7 +9,6 @@ public class EnemyPatrol1 : MonoBehaviour
     public int maxHp; //Max health
     public EnemyHealth enemyHealth; //visual health
 
-
     public float speed; //Speed
     public float distance;
     private bool moveRight = true;
@@ -17,7 +16,7 @@ public class EnemyPatrol1 : MonoBehaviour
     public PlayerController player;
 
     [Header ("Loot Drop")]
-    public GameObject lootDrop;
+    public GameObject[] lootDrop;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +63,8 @@ public class EnemyPatrol1 : MonoBehaviour
     }
     void LootDrop()
     {
-        Instantiate(lootDrop, transform.position,  Quaternion.identity);
+        //Pick a random loot drop from the loot drop array
+        int lootIndex = Random.Range(0,lootDrop.Length);
+        //Instantiate(lootDrop, transform.position, Quaternion.identity);
     }
 }
