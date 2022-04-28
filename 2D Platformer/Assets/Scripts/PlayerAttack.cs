@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange; //Range in which the player can attack
     public float attackRate;
     private float lastAttackTime;
-    //public EnemyController enemy;
     public LayerMask enemyLayer;
     private Vector2 direction;
     public GameObject wepon;
@@ -17,26 +16,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        //wepon = false;
         wepon.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
-        /*if(Input.GetKeyDown(KeyCode.R))
-            {
-                if(Time.time - lastAttackTime >= attackRate);
-                //Attack();
-                //wepon = true;
-                Debug.Log("ATTACK");
-            }
-            else
-            {
-                //wepon = false;
-            }*/
     }
     private void OnTriggerEnter2D (Collider2D other)
     {

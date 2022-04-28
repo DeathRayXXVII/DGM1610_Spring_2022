@@ -18,15 +18,6 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         levelManager = FindObjectOfType<LevelManager>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /* if(Time.time - lastAttackTime >= attackRate && Vector2.Distance(transform.position, player.transform.position) < attackRange)
-        {
-            OnTriggerEnter2D(Coollider2d other);
-        }*/
-    }
     private void OnTriggerEnter2D (Collider2D other)
     {
         lastAttackTime = Time.time;

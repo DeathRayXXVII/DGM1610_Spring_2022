@@ -13,15 +13,10 @@ public class EnemyHealth : MonoBehaviour
     public float xOffset; //x offset for camera
     public float yOffset; // y offset for camera
 
-    void Start(){
-        
-    }
     // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(enemy.transform.position.x + xOffset, enemy.transform.position.y + yOffset, transform.position.z);
-        //enemy = FindObjectOfType<EnemyController>();
-        //slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
     public void SetMaxHealth(int health, float maxHealth)
     {
