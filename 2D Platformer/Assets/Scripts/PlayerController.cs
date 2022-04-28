@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius; //Making an area to cheak ground
     public LayerMask whatIsGround; //What is the ground
     private float moveVelocity;
-
+    [Header("Audio")]
     private AudioSource source; //Audio sourece
     public AudioClip marker; //Audio clip
+    private AudioSource sourceAttack; //Audio sourece
+    public AudioClip attackMarker; //Audio cli
 
 
     // Start is called before the first frame update
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
         curHP = maxHp;
         healthBar.SetHealth(maxHp); //Updates the health bar
         source = GetComponent<AudioSource>(); //Getting the audio source
+        sourceAttack = GetComponent<AudioSource>();
     }
     void FixedUpdate() 
     {
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
                 if(Input.GetMouseButtonDown(0))
                 {
                     wepon.SetActive(true);
+                    Attack();
                     Debug.Log("ATTACK"); 
                 }      
         }
@@ -99,13 +103,7 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         lastAttackTime = Time.time;
-        //Raycast using the enemyLayer
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
-        if(hit.collider != null)
-        {
-            hit.collider.GetComponent<EnemyController>()?.TakeDamage(damage);
-            Debug.Log("you hit");
-        }
+        sourceAttack.PlayOneShot(attackMarker,1.0f);//Play the Audio source on attack
     }
     public void TakeDamage(int Damage)
     {

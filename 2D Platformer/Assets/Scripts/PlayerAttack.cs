@@ -12,11 +12,14 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     private Vector2 direction;
     public GameObject wepon; //Getting the object to use
+    private AudioSource source; //Audio sourece
+    public AudioClip marker; //Audio cli
 
     // Start is called before the first frame update
     void Start()
     {
         wepon.SetActive(false); //Deactivating the wepon object
+        source = GetComponent<AudioSource>(); //Getting the audio source
     }
     private void OnTriggerEnter2D (Collider2D other)
     {
@@ -28,12 +31,15 @@ public class PlayerAttack : MonoBehaviour
     void Attack()
     {
         lastAttackTime = Time.time;
+        
         //Raycast using the enemyLayer
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
         if(hit.collider != null)
         {
             hit.collider.GetComponent<EnemyController>()?.TakeDamage(damage);
+            source.PlayOneShot(marker,1.0f);//Play the Audio source on hit
             Debug.Log("you hit");
         }
+         
     }
 }

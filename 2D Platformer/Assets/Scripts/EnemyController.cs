@@ -15,18 +15,24 @@ public class EnemyController : MonoBehaviour
     [Header ("Loot Drop")]
     public GameObject[] lootDrop;
     // Start is called before the first frame update
+    [Header("Audio")]
+    private AudioSource source; //Audio sourece
+    public AudioClip marker; //Audio clip
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         curHP = maxHp;
         enemyHealth.SetHealth(maxHp); //Updates the health bar
+        source = GetComponent<AudioSource>(); //Getting the audio source
     }
 
     public void TakeDamage(int damage)
     {
+        
         curHP -= damage;
         enemyHealth.SetHealth(curHP);
         Debug.Log("I got hit");
+        
         if(curHP <= 0)
         {
             die();

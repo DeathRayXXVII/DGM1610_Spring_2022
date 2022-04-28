@@ -20,7 +20,9 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D (Collider2D other)
     {
-        if(Time.time / lastAttackTime >= attackRate)
+        if(other.CompareTag("Player"))
+        {
+            if(Time.time / lastAttackTime >= attackRate)
         {
             player.TakeDamage(damage);
         }
@@ -29,5 +31,7 @@ public class EnemyAttack : MonoBehaviour
         {
             gameManager.RespawnPlayer();
         }
+        }
+        
     }
 }
