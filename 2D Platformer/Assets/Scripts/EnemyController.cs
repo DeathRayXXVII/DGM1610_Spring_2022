@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour
     public int maxHp; //Max health
     public EnemyHealth enemyHealth; //visual health
     public PlayerController player;
+    public Rigidbody2D rb; //Enemy rigidbody
+    [Header ("Particals")]
+    public GameObject deathParticles;
     [Header ("Loot Drop")]
     public GameObject[] lootDrop;
     // Start is called before the first frame update
@@ -33,6 +36,7 @@ public class EnemyController : MonoBehaviour
     } 
     void die()
     {
+        Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles
         Destroy(gameObject);
     }
     void LootDrop()

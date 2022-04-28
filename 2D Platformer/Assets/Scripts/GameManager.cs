@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator RespawnPlayerCo()
     {
-        //Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles
+        Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles
         //Hide the player on death
         playerOj.SetActive(false); 
         rb.GetComponent<Renderer>().enabled = false;
@@ -49,6 +49,6 @@ public class GameManager : MonoBehaviour
         player.curHP = player.maxHp;
         healthBar.SetHealth(player.maxHp);
         //Show Respawn Particle
-        //Instantiate(respawnParticles, currentCheakPoint.transform.position, currentCheakPoint.transform.rotation);
+        Instantiate(respawnParticles, currentCheakPoint.transform.position, currentCheakPoint.transform.rotation);
     }
 }
