@@ -18,9 +18,9 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gameManager = FindObjectOfType<GameManager>();
     }
-    private void OnTriggerStay2D (Collider2D other)
+    private void OnTriggerEnter2D (Collider2D other)
     {
-        if(Time.time - lastAttackTime >= attackRate)
+        if(Time.time / lastAttackTime >= attackRate)
         {
             player.TakeDamage(damage);
         }
