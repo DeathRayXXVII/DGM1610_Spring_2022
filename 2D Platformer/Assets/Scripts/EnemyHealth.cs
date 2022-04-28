@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public EnemyPatrol1 enemy;
+    public EnemyController enemy;
     public Slider slider;
     public Color low;
     public Color high;
@@ -14,12 +14,13 @@ public class EnemyHealth : MonoBehaviour
     public float yOffset; // y offset for camera
 
     void Start(){
-        enemy = FindObjectOfType<EnemyPatrol1>();
+        
     }
     // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(enemy.transform.position.x + xOffset, enemy.transform.position.y + yOffset, transform.position.z);
+        //enemy = FindObjectOfType<EnemyController>();
         //slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
     public void SetMaxHealth(int health, float maxHealth)

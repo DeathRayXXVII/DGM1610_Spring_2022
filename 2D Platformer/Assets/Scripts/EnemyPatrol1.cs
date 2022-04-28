@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class EnemyPatrol1 : MonoBehaviour
 {
-    [Header ("Enemy Stats")]
-    public int curHP; //Health
-    public int maxHp; //Max health
-    public EnemyHealth enemyHealth; //visual health
-
     public float speed; //Speed
     public float distance;
     private bool moveRight = true;
     public Transform groundDetection;
     public PlayerController player;
 
-    [Header ("Loot Drop")]
-    public GameObject[] lootDrop;
-
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         curHP = maxHp;
         enemyHealth.SetHealth(maxHp); //Updates the health bar
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -46,7 +38,7 @@ public class EnemyPatrol1 : MonoBehaviour
             }
         }
     }
-    public void TakeDamage(int damage)
+    /*public void TakeDamage(int damage)
     {
         curHP -= damage;
         enemyHealth.SetHealth(curHP);
@@ -55,6 +47,7 @@ public class EnemyPatrol1 : MonoBehaviour
         {
             die();
             LootDrop();
+            
         }
     }
     void die()
@@ -65,6 +58,7 @@ public class EnemyPatrol1 : MonoBehaviour
     {
         //Pick a random loot drop from the loot drop array
         int lootIndex = Random.Range(0,lootDrop.Length);
+        Debug.Log("Loot Drop");
         //Instantiate(lootDrop, transform.position, Quaternion.identity);
-    }
+    }*/
 }

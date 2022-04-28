@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange; //Range in which the player can attack
     public float attackRate;
     private float lastAttackTime;
-    public EnemyPatrol1 enemy;
+    //public EnemyController enemy;
     public LayerMask enemyLayer;
     private Vector2 direction;
     public GameObject wepon;
@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyPatrol1>();
+        
         //wepon = false;
         wepon.SetActive(false);
     }
@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
         /*if(Input.GetKeyDown(KeyCode.R))
             {
                 if(Time.time - lastAttackTime >= attackRate);
@@ -41,7 +41,8 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerEnter2D (Collider2D other)
     {
         lastAttackTime = Time.time;
-        enemy.TakeDamage(damage);
+        //enemy.TakeDamage(damage);
+        Attack();
         
     }
     void Attack()
@@ -51,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
         if(hit.collider != null)
         {
-            hit.collider.GetComponent<EnemyPatrol1>()?.TakeDamage(damage);
+            hit.collider.GetComponent<EnemyController>()?.TakeDamage(damage);
             Debug.Log("you hit");
         }
     }

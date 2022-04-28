@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, enemyLayer);
         if(hit.collider != null)
         {
-            hit.collider.GetComponent<EnemyPatrol1>()?.TakeDamage(damage);
+            hit.collider.GetComponent<EnemyController>()?.TakeDamage(damage);
             Debug.Log("you hit");
         }
     }
