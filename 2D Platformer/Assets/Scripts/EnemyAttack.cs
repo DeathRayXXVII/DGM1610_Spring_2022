@@ -10,13 +10,13 @@ public class EnemyAttack : MonoBehaviour
     public float attackRate;
     private float lastAttackTime;
     public PlayerController player;
-    public LevelManager levelManager;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        levelManager = FindObjectOfType<LevelManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter2D (Collider2D other)
     {
@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         player.TakeDamage(damage);
         if(player.curHP <= 0)
         {
-            levelManager.RespawnPlayer();
+            gameManager.RespawnPlayer();
         }
     }
 }

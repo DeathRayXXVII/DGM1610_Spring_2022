@@ -69,18 +69,19 @@ public class PlayerController : MonoBehaviour
                 {
                     Jump();
                 }
-        if(Input.GetMouseButtonDown(0))
-            {
-                if(Time.time - lastAttackTime >= attackRate);
+        
+        if(Time.time - lastAttackTime >= attackRate);
+        {
+                if(Input.GetMouseButtonDown(0))
                 {
                     wepon.SetActive(true);
                     Debug.Log("ATTACK"); 
                 }      
-            }
-             if (Input.GetMouseButtonUp(0))
-            {
-                wepon.SetActive(false);
-            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            wepon.SetActive(false);
+        }
         
         //Player Flip
         if (GetComponent<Rigidbody2D>().velocity.x > 0)
