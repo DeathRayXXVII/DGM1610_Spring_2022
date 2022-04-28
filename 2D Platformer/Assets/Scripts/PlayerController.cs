@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     public GameObject wepon;// weopn of use
 
     [Header ("Inventory")]
-    public int key;
+    public int key; //How many keys are in inventory
     //public int coins;
-    public int HealthPotion;
+    public int HealthPotion; //How many health potions are in inventory
 
     [Header("Ground Check")]
     private bool isGrounded;//Are we able to jump 
@@ -65,12 +65,12 @@ public class PlayerController : MonoBehaviour
     }
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded) //Removed GetKeyDown
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
                 {
                     Jump();
                 }
         
-        if(Time.time - lastAttackTime >= attackRate);
+        if(Time.time - lastAttackTime >= attackRate)
         {
                 if(Input.GetMouseButtonDown(0))
                 {

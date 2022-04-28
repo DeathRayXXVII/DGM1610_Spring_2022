@@ -20,7 +20,7 @@ public class CameraMove : MonoBehaviour
     {
         if(isFollowing)
         {
-            transform.position = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, transform.position.z);
+            transform.position = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, transform.position.z); //Getting the position of the player to follow it
         }
     }
 }

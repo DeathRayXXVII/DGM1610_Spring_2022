@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [Header ("Player Attack")]
-    public int damage;
+    public int damage; //Number to be delt with
     public float attackRange; //Range in which the player can attack
-    public float attackRate;
-    private float lastAttackTime;
+    public float attackRate; //Rate at which the player can attack at
+    private float lastAttackTime; //Last time the player attack
     public LayerMask enemyLayer;
     private Vector2 direction;
-    public GameObject wepon;
+    public GameObject wepon; //Getting the object to use
 
     // Start is called before the first frame update
     void Start()
     {
-        wepon.SetActive(false);
+        wepon.SetActive(false); //Deactivating the wepon object
     }
     private void OnTriggerEnter2D (Collider2D other)
     {

@@ -14,7 +14,11 @@ public class CoinPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        scoreManager.IncreaseScoreText(scoreToGive);
-        Destroy(gameObject);
+        if(other.CompareTag("Player")) //Making sure it is the player
+        {
+            scoreManager.IncreaseScoreText(scoreToGive);//add the score to the manager
+            Destroy(gameObject);
+        }
+        
     }
 }

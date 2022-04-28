@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(enemy.transform.position.x + xOffset, enemy.transform.position.y + yOffset, transform.position.z);
+        transform.position = new Vector3(enemy.transform.position.x + xOffset, enemy.transform.position.y + yOffset, transform.position.z); //Setting the position of the health bar 
     }
     public void SetMaxHealth(int health, float maxHealth)
     {
@@ -29,6 +29,6 @@ public class EnemyHealth : MonoBehaviour
     {
         
         slider.value = health;
-        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider.normalizedValue);
+        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, slider.normalizedValue); //Changing the color of the health from max to low health
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [Header ("Enemy Attack")]
-    public int damage;
+    public int damage; //How much damge
     public float attackRange; //Range in which the player can attack
-    public float attackRate;
-    private float lastAttackTime;
+    public float attackRate; //Rate at which the enemy can attack
+    private float lastAttackTime; //Last time attack was delt
     public PlayerController player;
     public GameManager gameManager;
 
@@ -18,10 +18,13 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gameManager = FindObjectOfType<GameManager>();
     }
-    private void OnTriggerEnter2D (Collider2D other)
+    private void OnTriggerStay2D (Collider2D other)
     {
-        lastAttackTime = Time.time;
-        player.TakeDamage(damage);
+        if(Time.time - lastAttackTime >= attackRate)
+        {
+            player.TakeDamage(damage);
+        }
+        
         if(player.curHP <= 0)
         {
             gameManager.RespawnPlayer();

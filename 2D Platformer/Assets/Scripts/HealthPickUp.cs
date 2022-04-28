@@ -18,19 +18,19 @@ public class HealthPickUp : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) 
     {
         
-        if (player.curHP >= player.maxHp)
+        if (player.curHP >= player.maxHp) //Checking if the curent health is greater than max health
         {
             //player.curHP = player.maxHp;
             Destroy(gameObject);
             Debug.Log("All healed up");
         }
-        else if (player.curHP <= player.maxHp)
+        else if (player.curHP <= player.maxHp)//Checking if the current health is less than max health
         {
-            player.curHP += healthToGive;
-            healthBar.SetHealth(player.curHP);
-            if(player.curHP >= player.maxHp)
+            player.curHP += healthToGive; //add the given health to the current health
+            healthBar.SetHealth(player.curHP); // set current health to the health bar
+            if(player.curHP >= player.maxHp) //Checking if the curent health is greater than max health
             {
-                player.curHP = player.maxHp;
+                player.curHP = player.maxHp; //If current health is over max set it to max health
             }
             Destroy(gameObject);
             Debug.Log("You gained health");
