@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene(sceneToLoad);
         }
-        else
+        else if (other.CompareTag("Player") && playerController.key <= 1)
         {
             Debug.Log("Door is locked you need a key");
         }

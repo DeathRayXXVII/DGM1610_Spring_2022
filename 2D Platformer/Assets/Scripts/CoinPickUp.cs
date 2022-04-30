@@ -17,11 +17,11 @@ public class CoinPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     { 
-        
+       
         if(other.CompareTag("Player")) //Making sure it is the player
         {
-           source.PlayOneShot(marker,1.0f);//Play the Audio source on pickup
             scoreManager.IncreaseScoreText(scoreToGive);//add the score to the manager
+             source.PlayOneShot(marker,1.0f);//Play the Audio source on pickup
             Destroy(gameObject);
         }
         
