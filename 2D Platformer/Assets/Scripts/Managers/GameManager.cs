@@ -35,12 +35,12 @@ public class GameManager : MonoBehaviour
         rb.GetComponent<Rigidbody2D>().gravityScale = 0f;
         rb.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         //Point penalty
-        if (scoreManager.score >= 0)
+        if (scoreManager.score >= 1)
         {
             scoreManager.DecreaseScoreText(deathPenalty);
             Debug.Log("Player Respwned");
         }
-        else if (scoreManager.score <= 0)
+         if (scoreManager.score <= 1)
         {
             scoreManager.score = 0;
         }
