@@ -1775,7 +1775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6712c5249f7d91419dc2cf7f7bbb32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 1
   attackRange: 5
   attackRate: 5
   enemyLayer:
@@ -5674,9 +5674,10 @@ GameObject:
   - component: {fileID: 876306607}
   - component: {fileID: 876306610}
   - component: {fileID: 876306606}
+  - component: {fileID: 876306611}
   - component: {fileID: 876306605}
   - component: {fileID: 876306609}
-  - component: {fileID: 876306611}
+  - component: {fileID: 876306612}
   m_Layer: 7
   m_Name: Enemy_Boss
   m_TagString: Enemy
@@ -5712,7 +5713,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876306604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5880,6 +5881,23 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.02734375}
       - {x: 0.5, y: 0.015625}
       - {x: 0.0703125, y: 0.25}
+--- !u!114 &876306612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876306604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21514144af13f1049a486f4b596adbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  stopDistance: 0
+  retreatDistance: 0
+  startDelay: 2
+  projectile: {fileID: 3298670590828025464, guid: 70d320219eccf6d47bab38f3b93aa35e, type: 3}
 --- !u!1 &879606330
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,7 +6120,7 @@ MonoBehaviour:
   curHP: 10
   maxHp: 10
   healthBar: {fileID: 387572524}
-  damage: 3
+  damage: 0
   attackRange: 2
   attackRate: 0.25
   enemyLayer:
@@ -6117,7 +6135,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  marker: {fileID: 0}
+  marker: {fileID: 8300000, guid: f189e7879bee55b479816ac95bd71490, type: 3}
   attackMarker: {fileID: 8300000, guid: b3b93a42ca7ec3040bfad5deebde7467, type: 3}
 --- !u!61 &899385845
 BoxCollider2D:
@@ -6225,7 +6243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899385843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -0.49, z: 0}
+  m_LocalPosition: {x: 275.27, y: -5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1540126891}
@@ -13890,7 +13908,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132044298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4779.6074}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.647849, y: 1.1253319, z: 1}
   m_Children:
   - {fileID: 1328002942}
