@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour
         
         if(curHP <= 0)
         {
+            source.PlayOneShot(marker,1.0f);//Play the Audio source on death
             die();
             LootDrop();
             
@@ -42,7 +43,8 @@ public class EnemyController : MonoBehaviour
     } 
     void die()
     {
-        Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles
+        Instantiate (deathParticles, rb.transform.position, rb.transform.rotation); //Generate Death Particles 
+        
         Destroy(gameObject);
     }
     void LootDrop()

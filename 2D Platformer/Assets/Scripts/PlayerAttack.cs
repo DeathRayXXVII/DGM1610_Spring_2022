@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private Vector2 direction;
     public GameObject wepon; //Getting the object to use
     private AudioSource source; //Audio sourece
-    public AudioClip marker; //Audio cli
+    public AudioClip marker; //Audio clip
 
     // Start is called before the first frame update
     void Start()

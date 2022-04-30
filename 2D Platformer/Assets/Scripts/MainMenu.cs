@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(sceneToLoad); //scene to start the game
+        Time.timeScale = 1f;
     }
     public void QuitGame()
     {
