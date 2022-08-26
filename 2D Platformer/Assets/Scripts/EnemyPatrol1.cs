@@ -10,7 +10,7 @@ public class EnemyPatrol1 : MonoBehaviour
     public Transform groundDetection; //Ground game object detection
     public Transform wallDetection; //Wall game object detection
     public LayerMask whatIsWall; //Help find what is a wall
-    public PlayerController player;
+    public PlayerController3 player;
 
     // Update is called once per frame
     void Update()

@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public int curHP; //Health
     public int maxHp; //Max health
     public EnemyHealth enemyHealth; //visual health
-    public PlayerController player;
+    public PlayerController3 player;
     public Rigidbody2D rb; //Enemy rigidbody
     [Header ("Particals")]
     public GameObject deathParticles;
@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip marker; //Audio clip
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerController3>();
         curHP = maxHp;
         enemyHealth.SetHealth(maxHp); //Updates the health bar
         source = GetComponent<AudioSource>(); //Getting the audio source

@@ -7,13 +7,13 @@ public class Pickups : MonoBehaviour
     public enum PickupType {Key}; //adding a enum array type
     public PickupType currentPickup; //deffinging a pick up type
     public int pickupAmount; //choosing the ammount to pick up
-    private PlayerController playerController;
+    private PlayerController3 playerController;
     private AudioSource source; //Audio sourece
     public AudioClip marker; //Audio clip
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerController3>();
         source = GetComponent<AudioSource>(); //Getting the audio source
     }
 

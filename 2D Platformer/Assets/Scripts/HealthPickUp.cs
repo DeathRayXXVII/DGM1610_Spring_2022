@@ -5,13 +5,13 @@ using UnityEngine;
 public class HealthPickUp : MonoBehaviour
 {
     public HealthBar healthBar;
-    public PlayerController player;
+    public PlayerController3 player;
     public int healthToGive;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.Find("Player").GetComponent<PlayerController3>();
         healthBar = GameObject.Find("HealthBar_UI").GetComponent<HealthBar>();
     }
 

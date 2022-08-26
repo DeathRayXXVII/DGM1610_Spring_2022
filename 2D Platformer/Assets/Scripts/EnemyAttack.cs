@@ -9,13 +9,13 @@ public class EnemyAttack : MonoBehaviour
     public float attackRange; //Range in which the player can attack
     public float attackRate; //Rate at which the enemy can attack
     private float lastAttackTime; //Last time attack was delt
-    public PlayerController player;
+    public PlayerController3 player;
     public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController3>();
         gameManager = FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter2D (Collider2D other)

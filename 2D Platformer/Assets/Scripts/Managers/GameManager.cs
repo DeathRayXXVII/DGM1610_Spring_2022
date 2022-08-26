@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerController player; //Player
+    public PlayerController3 player; //Player
     public GameObject currentCheakPoint; //Last cheak point found
     public Rigidbody2D rb; //Players rigidbody
     public GameObject playerOj; //Player object
