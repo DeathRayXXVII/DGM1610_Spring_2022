@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject currentCheakPoint; //Last cheak point found
     public Rigidbody2D rb; //Players rigidbody
     public GameObject playerOj; //Player object
-    public ScoreManager scoreManager;
-    public HealthBar healthBar; //visual health
+    public ScoreManager2 scoreManager;
+    public HealthBar2 healthBar; //visual health
     [Header ("Particals")]
     public GameObject deathParticles;
     public GameObject respawnParticles;

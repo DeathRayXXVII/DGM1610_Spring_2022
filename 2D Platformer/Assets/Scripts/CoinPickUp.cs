@@ -5,13 +5,13 @@ using UnityEngine;
 public class CoinPickUp : MonoBehaviour
 {
     public int scoreToGive; //Score for coin pick up
-    public ScoreManager scoreManager;
+    public ScoreManager2 scoreManager;
     private AudioSource source; //Audio sourece
     public AudioClip marker; //Audio clip
     // Start is called before the first frame update
     void Start()
     {
-        scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager>();
+        scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager2>();
         source = GetComponent<AudioSource>(); //Getting the audio source
     }
 

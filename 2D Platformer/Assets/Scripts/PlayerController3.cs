@@ -10,7 +10,7 @@ public class PlayerController3 : MonoBehaviour
     private Rigidbody2D rb;
     public int curHP; //Health
     public int maxHp; //Max health
-    public HealthBar healthBar; //visual health
+    public HealthBar2 healthBar; //visual health
     private Vector2 direction;
 
     [Header ("Player Combat")]

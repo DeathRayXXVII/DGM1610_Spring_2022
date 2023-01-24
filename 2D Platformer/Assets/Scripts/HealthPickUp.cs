@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour
 {
-    public HealthBar healthBar;
+    public HealthBar2 healthBar;
     public PlayerController3 player;
     public int healthToGive;
 
@@ -12,7 +12,7 @@ public class HealthPickUp : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController3>();
-        healthBar = GameObject.Find("HealthBar_UI").GetComponent<HealthBar>();
+        healthBar = GameObject.Find("HealthBar_UI").GetComponent<HealthBar2>();
     }
 
     void OnTriggerEnter2D(Collider2D other) 
